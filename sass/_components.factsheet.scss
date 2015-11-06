@@ -1,0 +1,58 @@
+/*------------------------------------*\
+    #FACTSHEET
+\*------------------------------------*/
+
+/**
+ * Specific styling for factsheets.
+ **/
+
+
+
+
+
+
+.#{$sagovau-namespace}factsheet {
+    padding-top:    $sagovau-spacing-unit-base;
+}
+
+    .#{$sagovau-namespace}factsheet__details {
+        $font-size: map-get($sagovau-h3-settings, font-size);
+
+        @extend %#{$sagovau-namespace}list-bare;
+
+        @include inuit-font-size($font-size);
+
+        margin-bottom:  $sagovau-spacing-unit-base;
+    }
+
+
+    // Increase the font size of the heading on large devices
+
+    .#{$sagovau-namespace}factsheet__heading {
+        $font-size: map-get($sagovau-h1-settings, font-size);
+
+        @include media-query(large-and-up) {
+
+            @include inuit-font-size($font-size * 1.5);
+
+        }
+
+    }
+
+
+    // Give the introductory paragraph more prominence
+
+    /**
+     * 1. Because this text can be quite lengthy we'll ignore the usual
+     *    baseline grid (which will often be too cramped or too wide) and
+     *    manually set the font-size and line-height.
+     **/
+
+    .#{$sagovau-namespace}factsheet__intro {
+        $font-size: map-get($sagovau-h2-settings, font-size);
+
+        @extend %#{$sagovau-namespace}factsheet__highlight;
+
+        font-size:      $font-size;     /* [1] */
+        line-height:    1.2;            /* [1] */
+    }

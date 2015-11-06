@@ -1,0 +1,49 @@
+/*------------------------------------*\
+    #PRIMARY SETTINGS
+\*------------------------------------*/
+
+/**
+ * The site's main settings. Builds on Bedrock's main settings.
+ */
+
+// Import the Bedrock settings
+
+@import "dewnr-bedrock/sass/_settings.general.scss";
+
+
+
+
+
+/* = COLORS = */
+
+/**
+ * Because the factsheet CSS is shared across brands, all brand colours are
+ * defined here.
+ **/
+
+$sagovau-color-brands: (
+    dewnr:  #575756,
+    samdb:  #0084c5
+);
+
+
+/* = LAYOUT = */
+
+$sagovau-max-width: 768px;
+
+// Don't include "huge" breakpoint, as it's not required with a small max width
+
+$sagovau-breakpoints: (
+    "small-and-up": "screen and (min-width: 480px)",
+    "medium-and-up": "screen and (min-width: 640px)",
+    "large-and-up": "screen and (min-width: 720px)"
+);
+
+// Redefine media queries to update the breakpoints
+
+$sagovau-media-queries: map-merge(
+    $sagovau-breakpoints,
+    (
+        "retina": "(-webkit-min-device-pixel-ratio: 1.5), (-moz-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), min-resolution: 1.5dppx)"
+    )
+);

@@ -1,0 +1,138 @@
+/*------------------------------------*\
+    #COLOR SCHEMES
+\*------------------------------------*/
+
+/**
+ * Apply colour combinations, with multi-brand colour support.
+ **/
+
+$sagovau-enable-color-scheme--brands:                    false !default;
+$sagovau-enable-color-scheme--brands-reverse:            false !default;
+$sagovau-enable-color-scheme--brands-light:              false !default;
+
+$sagovau-enable-color-scheme--success:                   false !default;
+$sagovau-enable-color-scheme--success-reverse:           false !default;
+
+$sagovau-enable-color-scheme--warning:                   false !default;
+$sagovau-enable-color-scheme--warning-reverse:           false !default;
+
+$sagovau-enable-color-scheme--danger:                    false !default;
+$sagovau-enable-color-scheme--danger-reverse:            false !default;
+
+$sagovau-enable-color-scheme--gradient:                  false !default;
+
+
+
+
+// Loop through brand colours
+
+/**
+ * 1. The Use the various brand classes to trigger the brand colour-based
+ *    schemes. If this a brand class is not applied, the brand colour-based
+ *    schemes will not work.
+ **/
+
+@each $brand, $color-brand in $sagovau-color-brands {
+
+    $color-brand--light:                tint($color-brand, $sagovau-tint-base);
+    $color-brand--medium-light:         tint($color-brand, 50%);
+    $color-brand--dark:                 shade($color-brand, $sagovau-shade-base);
+    $color-brand--medium-dark:          shade($color-brand, 50%);
+
+    .#{$brand} {    //* [1] */
+        @if ($sagovau-enable-color-scheme--brands == true) {
+
+            .#{$sagovau-namespace}color-scheme--brand {
+
+                & .#{$sagovau-namespace}color-scheme__highlight {
+                    color:          $color-brand !important;
+                }
+
+            }
+
+        }
+
+        @if ($sagovau-enable-color-scheme--brands == true) {
+
+            .#{$sagovau-namespace}color-scheme--brand-light {
+                background-color:   $color-brand--light !important;
+            }
+
+        }
+
+        @if ($sagovau-enable-color-scheme--brands-reverse == true) {
+
+            @media not print {
+
+                .#{$sagovau-namespace}color-scheme--brand-reverse {
+                    background-color:   $color-brand !important;
+
+                    &, * {
+                        color:          $sagovau-color-text-reverse !important;
+                    }
+
+                    .#{$sagovau-namespace}color-scheme__highlight {
+                        color:          $color-brand--light !important;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+
+
+
+
+// Success
+
+@if ($sagovau-enable-color-scheme--success == true) {
+
+    .#{$sagovau-namespace}color-scheme--success {
+        background-color:   $sagovau-color-success--light !important;
+
+        & .#{$sagovau-namespace}color-scheme__highlight {
+            color:          $sagovau-color-success !important;
+        }
+    }
+
+}
+
+@if ($sagovau-enable-color-scheme--success-reverse == true) {
+
+    .#{$sagovau-namespace}color-scheme--success-reverse {
+        background-color:   $sagovau-color-success !important;
+
+        &, * {
+            color:          $sagovau-color-text-reverse !important;
+        }
+
+        .#{$sagovau-namespace}color-scheme__highlight {
+            color:          $sagovau-color-success--light !important;
+        }
+    }
+
+}
+
+
+// Gradient overlay
+
+@if ($sagovau-enable-color-scheme--gradient == true) {
+
+    .#{$sagovau-namespace}color-scheme--gradient {
+        $color-dark:    rgba(0, 0, 0, 0.06);
+        $color-light:   rgba(255, 255, 255, 0.03);
+        $range:         50%;
+
+        background-image:   radial-gradient( at top left, $color-dark 0, transparent $range),
+                            radial-gradient( at bottom right, $color-dark 0, transparent $range),
+                            radial-gradient( at top right, $color-light 0, transparent $range),
+                            radial-gradient( at bottom left, $color-light 0, transparent $range) !important;
+    }
+
+}

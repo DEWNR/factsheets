@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    #SITE-FOOTER
+\*------------------------------------*/
+
+@at-root {
+
+    .#{$sagovau-namespace}site-footer {
+
+    }
+
+        .#{$sagovau-namespace}site-footer__logo {
+            display: block;
+            fill: currentColor;
+            max-width: 100%;
+        }
+
+        .#{$sagovau-namespace}site-footer__intro {
+
+            @include media-query(large-and-up) {
+                margin-bottom: 0;
+            }
+
+        }
+
+        .#{$sagovau-namespace}site-footer__subheading {
+            @extend %gamma;
+        }
+
+}

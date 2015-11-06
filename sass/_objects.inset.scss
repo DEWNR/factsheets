@@ -1,0 +1,31 @@
+/*------------------------------------*\
+    #INSET
+\*------------------------------------*/
+
+/**
+ * Inset content within surrounding content.
+ *
+ * Floats content to the right and adds appropriate margin/padding to ensure
+ * content is separated and sized correctly.
+ *
+ * TODO: work out how this can be turned into an flexible OOCSS-style object.
+ **/
+
+/*div, figure, img */.#{$sagovau-namespace}inset {
+
+    @mixin inset {
+        float:          right;
+        margin-left:    $sagovau-spacing-unit-base/2;
+        padding-left:   $sagovau-spacing-unit-base/2;
+    }
+    
+    @include media-query(medium-and-up) {
+        @include inset;
+    }
+    
+    @media print {
+        @include    inset;
+        max-width:  50%;
+    }
+
+}

@@ -1,0 +1,58 @@
+/*------------------------------------*\
+    #PRINT
+\*------------------------------------*/
+
+/**
+ * Basic print styling
+ **/
+
+@page {
+    margin: 1cm;
+    size: A4 portrait;
+}
+
+@media print {
+
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    a[href^="/"]:after {
+        content: " (http://www.naturalresources.sa.gov.au" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /**
+     * Don’t show links that are fragment identifiers, or use the `javascript:`
+     * pseudo protocol.
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after,
+    .#{$sagovau-namespace}u-no-print-link:after {
+        content: "" !important;
+    }
+
+    // Avoid page breaks immediately after headings
+
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+
+}

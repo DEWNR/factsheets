@@ -1,0 +1,27 @@
+/*------------------------------------*\
+    #INUITCSS FRAMEWORK SETTINGS
+\*------------------------------------*/
+
+/**
+ * The site's inuitcss settings. Builds on the series' inuitcss settings.
+ */
+
+// Import the series settings
+
+@import "dewnr-bedrock/sass/_settings.inuitcss.scss";
+
+
+
+
+
+/* = Layout = */
+
+$inuit-enable-layout--small:            true;
+
+
+
+
+
+/* = Other = */
+
+$inuit-enable-list-block--small:        true;

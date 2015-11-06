@@ -1,0 +1,81 @@
+/*------------------------------------*\
+    #SPECIFIC SETTINGS
+\*------------------------------------*/
+
+/**
+ * Site settings that have specific uses, such as controlling which classes
+ * are output or the design of a particular object or component.
+ **/
+
+// Import the series settings
+
+@import "dewnr-bedrock/sass/_settings.specific.scss";
+
+
+
+
+
+/* == DELIMITED == */
+
+$sagovau-delimited-enable-variation-pipe: true;
+
+
+/* == FONTS == */
+
+$sagovau-fonts-highlight-letter-spacing:    -0.02em;
+
+
+/* == HEADINGS == */
+
+$sagovau-h1-settings: (
+    color:          $sagovau-color-brand,
+    font-family:    $sagovau-font-family-highlight,
+    font-size:      2 * $sagovau-line-height-base,
+    font-weight:    normal
+);
+$sagovau-h2-settings: (
+    color:          $sagovau-color-brand,
+    font-family:    $sagovau-font-family-highlight,
+    font-size:      $sagovau-line-height-base,
+    font-weight:    bold
+);
+$sagovau-h3-settings: (
+    color:          $sagovau-color-brand,
+    font-family:    $sagovau-font-family-highlight,
+    font-size:      $sagovau-font-size-base--large,
+    font-weight:    normal
+);
+$sagovau-h4-settings: (
+    color:          $sagovau-color-brand,
+    font-family:    $sagovau-font-family-highlight,
+    font-size:      $sagovau-font-size-base
+);
+$sagovau-h5-settings: (
+    color:          $sagovau-color-brand,
+    font-size:      $sagovau-font-size-base
+);
+$sagovau-h6-settings: (
+    font-size:      $sagovau-font-size-base
+);
+
+
+/* == ISLAND == */
+
+$sagovau-island--small:                     true;
+
+
+/* == PAGE == */
+
+$sagovau-color-border-hr:               $sagovau-color-brand-secondary--light;
+
+
+/* == WRAPPER == */
+
+$sagovau-wrapper--ph:                       true;
+$sagovau-wrapper--ph-small:                 true;
+
+
+/* == COLOR-SCHEME == */
+
+$sagovau-enable-color-scheme--brands:            true;
+$sagovau-enable-color-scheme--brands-reverse:    true;
