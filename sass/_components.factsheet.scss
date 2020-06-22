@@ -51,7 +51,7 @@
     .#{$sagovau-namespace}factsheet__intro {
         $font-size: map-get($sagovau-h2-settings, font-size);
 
-        @extend %#{$sagovau-namespace}factsheet__highlight;
+        @extend %#{$sagovau-namespace}factsheet__highlight !optional;
 
         font-size:      $font-size;     /* [1] */
         line-height:    1.2;            /* [1] */
